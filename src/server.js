@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/connectDB');
 
+const userRoutes = require('./routes/user.routes');
 
 const cors = require('cors');
 
@@ -17,6 +18,7 @@ app.use(cors({
     credentials: true
 }));
 
+app.use('/api/user', userRoutes);
 
 const PORT = process.env.PORT || 8000;
 
